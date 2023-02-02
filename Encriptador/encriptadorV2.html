@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+ 
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-md navbar-dark  fixed-top bd-navbar">
+        <a class="navbar-brand" href="#">
+            <img class="" src="assets/img/girl-svgrepo-com.svg" alt="" width="60" height="60" style="margin-left: 20px;">
+            <span>Encriptador</span>
+        </a>
+ 
+      </nav>
+  
+      <main role="main" class="container">
+  
+        
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-8">
+                <br><br>
+                <label for="textValue">Ingrese un texto</label>
+                <textarea class="form-control text-area-size-primary" id="textValue" rows="5"></textarea>
+
+              <br><br>
+              <button type="button" onclick="getText()" class="btn button bg-button-primary btn-lg">Encriptar</button>
+              <button type="button" onclick="getText2()" class="btn btn-secondary btn-lg">Desencriptar</button>
+
+            </div>
+            <div id="columnResult" class="col-sm-4 d-none">
+                <label for="resultEncrypt">Resultado:</label>
+                <textarea disabled class="form-control text-area-size-secondary" id="resultEncrypt" rows="5" > </textarea>
+
+            </div>
+
+            <div id="columnMessage"  class="col-sm-4 d-flex flex-column align-items-center justify-content-center" >
+                <img src="assets/img/chat-svgrepo-com.svg" width="60" height="60">
+                <br><br>
+                <p class="text-center">No hay resultado</p>
+            </div>
+
+
+         </div>
+ 
+  
+    </main>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+
+    <script>
+
+        function getText()
+        {
+            
+            var text = document.getElementById('textValue').value;
+            var textLength = text.length;
+            var letter = "";
+            var encryptLetter = "";
+            var encryptText = text;
+            var arrayString = [];
+            var ObjectString = {
+            letter:"",
+            position: 0,
+            replaceBy: ""        
+           }
+            for(var i=0; i <= textLength-1; i++)
+            {
+                ObjectString = {
+                letter:"",
+                position: 0,
+                replaceBy: ""        
+               }
+                letter =  text.charAt(i);
+                var replaceBy = getValue(letter);
+                ObjectString.letter = letter;
+                ObjectString.position = i;
+                ObjectString.replaceBy = replaceBy;
+                arrayString.push(ObjectString);
+                
+    
+            }
+    
+            console.log(arrayString);
+            EncryptText(arrayString,text);
+    
+        }
+        function getValue(vowel)
+        {
+     
+        switch(vowel) {
+            
+            case "a":
+                    encryptLetter = "ai";
+                    return encryptLetter;
+                    break;
+            case "e":
+                    encryptLetter = "enter";
+                    return encryptLetter;
+                    break;
+            case "i":
+                    encryptLetter = "imes";
+                    return encryptLetter;
+                    break;
+            case "o":
+                    encryptLetter = "ober";
+                    return encryptLetter;
+                    break;
+            case "u":
+                    encryptLetter = "ufat";
+                    return encryptLetter;
+                    break;
+            default: return vowel;
+         
+        }
+    
+    }
+        function EncryptText(array,text)
+        {
+    
+            var originalText = text;
+            var result = "";
+            for (var x=0; x <= array.length-1; x++)
+            { 
+                result = result.concat(array[x].replaceBy);
+    
+            }
+            console.log("Resultado");       
+            console.log(result);
+
+            const elementResult = document.querySelector('#columnResult');
+            elementResult.classList.remove('d-none');
+
+            const elementMessa = document.querySelector('#columnMessage');
+            elementMessa.classList.add('d-none');
+
+
+            document.getElementById('resultEncrypt').value = result;
+        }
+        function getText2()
+        {
+         var text = document.getElementById('textValue').value;
+         var result = text.replace(/ai/g,"a");
+          result =  result.replace(/enter/g,"e");
+         result = result.replace(/imes/g,"i");
+         result=result.replace(/ober/g,"o");
+         result = result.replace(/ufat/g,"u"); 
+         console.log(result);
+         document.getElementById('resultEncrypt').value = '';
+         document.getElementById('resultEncrypt').value = result;
+    
+        }
+    
+    
+    
+    
+    
+     </script>
+
+
+
+
+
+
+
+
+</body>
+</html>
