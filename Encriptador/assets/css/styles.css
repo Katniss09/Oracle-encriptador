@@ -2,24 +2,23 @@ body {
   padding-top: 5rem;
   background-color: #e0ecf7;
 }
+
 .starter-template {
   padding: 3rem 1.5rem;
   text-align: center;
 }
 
-.bd-navbar {
-  
-  background-color: #063868;
-  
+.bd-navbar { 
+  background-color: #063868; 
 }
 
 .bg-button-primary {
-  
   background-color: #06213b;
   color: white;
   border: 1px solid #4CAF50;
   width: 200px;
 }
+
 .button:hover {
   background-color:#074580;
   transition: 0.4s;
@@ -32,13 +31,11 @@ body {
 }
 
 .text-area-size-secondary {
+  
   width: 100%;
   height: 500px;
   background-color:#74c1f5;
-
 }
-
- 
 
 label {
   color: #06213b;
@@ -46,4 +43,8 @@ label {
   display: block;
   width: 150px;
   float: left;
+  }
+
+  #resultado{
+    margin-top: 50px;
   }
