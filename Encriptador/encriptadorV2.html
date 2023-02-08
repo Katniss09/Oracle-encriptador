@@ -28,12 +28,12 @@
         <div class="row d-flex justify-content-center">
             <div class="col-sm-8">
                 <br><br>
-                <label for="textValue">Ingrese un texto</label>
+                <label id="ingresetext" for="textValue">Ingrese un texto</label>
                 <textarea class="form-control text-area-size-primary" id="textValue" rows="5"></textarea>
 
               <br><br>
               <button type="button" onclick="getText()" class="btn button bg-button-primary btn-lg">Encriptar</button>
-              <button type="button" onclick="getText2()" class="btn btn-secondary btn-lg">Desencriptar</button>
+              <button type="button" onclick="getText2()" class="btn button bg-button-secondary btn-lg">Desencriptar</button>
 
             </div>
             <div id="columnResult" class="col-sm-4 d-none">
@@ -45,7 +45,7 @@
             <div id="columnMessage"  class="col-sm-4 d-flex flex-column align-items-center justify-content-center" >
                 <img src="assets/img/chat-svgrepo-com.svg" width="60" height="60">
                 <br><br>
-                <p class="text-center">No hay resultado</p>
+                <p class="noresult">No hay resultado</p>
             </div>
 
 
