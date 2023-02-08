@@ -1,6 +1,6 @@
 body {
   padding-top: 5rem;
-  background-color:rgb(92, 55, 55);
+  background-color:cornsilk;
 }
 
 .starter-template {
@@ -9,13 +9,13 @@ body {
 }
 
 .bd-navbar { 
-  background-color: #063868; 
+  background-color: #2b6397; 
 }
 
 .bg-button-primary {
   background-color: #06213b;
   color: white;
-  border: 1px solid #4CAF50;
+  border: 1px solid #008d05;
   width: 200px;
 }
 
@@ -46,5 +46,5 @@ label {
   }
 
   #resultado{
-    margin-top: 50px;
+    margin-top: 80px;
   }
